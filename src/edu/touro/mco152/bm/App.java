@@ -16,7 +16,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Primary class for global variables, main and common methods.
+ * The `App` class is the primary class for running the benchmarking system.
+ * It initializes the GUI swing interface and ensures proper configuration of the benchmark based on user input.
+ * The class also includes constants, options, and run configurations that customize the benchmarking process.
  */
 public class App {
 
