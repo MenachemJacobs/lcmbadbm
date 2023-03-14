@@ -304,7 +304,11 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
         });
     }
 
-
+    /**
+     * Obtains the final status of the application after benchmarking.
+     * Sets the value of lastStatus to either true or false,based off the benchmark
+     * success, or will generate an error message from SwingWorker if an error occurred.
+     */
     @Override
     protected void done() {
         // Obtain final status, might from doInBackground ret value, or SwingWorker error
