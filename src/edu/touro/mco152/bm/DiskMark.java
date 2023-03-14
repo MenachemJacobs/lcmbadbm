@@ -3,7 +3,9 @@ package edu.touro.mco152.bm;
 import java.text.DecimalFormat;
 
 /**
- * Tracks and records progress as a disk read or write is being executed
+ * The 'DiskMark' class tracks and records the progress as a disk read or write is being executed,
+ * and provides methods for retrieving the results
+ * @since 3/14/2023
  */
 public class DiskMark {
 
