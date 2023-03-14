@@ -10,8 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Provides utility methods for jDiskMark
- * to easily generate and analyze data, and to
- * conduct various functions to directories and files
+ * to get information about the machine, generate pseudo
+ * random numbers and to conduct various functions
+ * to directories and files
  */
 public class Util {
 
@@ -224,6 +225,14 @@ public class Util {
         return "Unknown-Device-size for: " + devicePath;
     }
 
+    /**
+     * On macOS get the device path when given a file path.
+     * eg.  filePath = /home/james/Desktop/jDiskMarkData
+     * devicePath = /dev/sda
+     *
+     * @param path the file path
+     * @return the device path
+     */
     static public String getDeviceFromPathOSX(Path path) {
         try {
             Process p = Runtime.getRuntime().exec("df " + path.toString());

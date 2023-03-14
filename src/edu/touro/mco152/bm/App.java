@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 /**
  * Primary class for global variables, main and common methods.
+ * @// TODO: 3/13/2023 pass in instance of the new UI interface to DiskWorker
  */
 public class App {
 
@@ -214,7 +215,7 @@ public class App {
     }
 
     /**
-     *  populate run table with saved runs from db
+     *  populate run table with saved runs from database
      */
     public static void loadSavedRuns() {
         Gui.runPanel.clearTable();
