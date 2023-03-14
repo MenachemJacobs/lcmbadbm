@@ -51,11 +51,12 @@ public class App {
     public static double rMax = -1, rMin = -1, rAvg = -1;
 
     /**
+     * Sets the Nimbus look and feel, then creates and display the form
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        /* Set the Nimbus look and feel */
+        //Set the Nimbus look and feel
         try {
             for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -75,7 +76,7 @@ public class App {
             }
             //</editor-fold>
         }
-        /* Create and display the form */
+        //Create and display the form
         java.awt.EventQueue.invokeLater(App::init);
     }
 
