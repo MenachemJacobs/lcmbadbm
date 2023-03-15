@@ -17,8 +17,10 @@ import java.io.Serial;
 import java.text.NumberFormat;
 
 /**
- * Creates and populates a graph with data from the current run, and
- * stores gui references for easy access.
+ * Responsible for the all operations relating to the graph for the current benchmark,
+ * including operations such as creating and resetting the graph and the legend.
+ * Accepts benchmark information through the {@link addWriteMark} and {@link addReadMark} methods.
+ * Stores GUI components for easy reference.
  */
 public final class Gui {
 
@@ -104,6 +106,10 @@ public final class Gui {
         System.out.println(mark.toString());
     }
 
+    /**
+     * Adds information from the given DiskMark to the series of other data about the current benchmark.
+     * @param mark A DiskMark whose information is to be added dataset for the current benchmark.
+     */
     public static void addReadMark(DiskMark mark) {
         rSeries.add(mark.getMarkNum(), mark.getBwMbSec());
         rAvgSeries.add(mark.getMarkNum(), mark.getCumAvg());

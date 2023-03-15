@@ -16,7 +16,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Primary class for global variables, main and common methods.
+ * Primary class for initiating the program.
+ * Holds global variables including options and run configuration variables.
+ * This class is responsible for loading saving, and changing properties.
+ * This also starts the Swing dependant benchmarking class {@link DiskWorker}.
+ * It as well is called from DiskWorker to update the cummulative metrics used by the GUI.
  */
 public class App {
 
@@ -82,7 +86,7 @@ public class App {
     /**
      * Get the version from the build properties. Defaults to 0.0 if not found.
      *
-     * @return
+     * @return a String of the version from the build properties or 0.0 if not found.
      */
     public static String getVersion() {
         Properties bp = new Properties();
@@ -335,7 +339,10 @@ public class App {
     public static long targetTxSizeKb() {
         return (long) blockSizeKb * numOfBlocks * numOfMarks;
     }
-
+    /**
+     * Updates the statistics of the current benchmark based on the information given
+     * @param mark a {@link DiskMark} with data about an iteration of the current benchmarking
+     */
     public static void updateMetrics(DiskMark mark) {
         if (mark.type == DiskMark.MarkType.WRITE) {
             if (wMax == -1 || wMax < mark.getBwMbSec()) {
