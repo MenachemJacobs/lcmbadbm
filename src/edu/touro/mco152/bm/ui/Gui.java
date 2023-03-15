@@ -17,9 +17,9 @@ import java.io.Serial;
 import java.text.NumberFormat;
 
 /**
- * Responsible for the all operations relating to the graph for the current benchmark,
+ * Responsible for the all operations relating to updating the graph for the current benchmark,
  * including operations such as creating and resetting the graph and the legend.
- * Accepts benchmark information through the {@link addWriteMark} and {@link addReadMark} methods.
+ * Accepts benchmark information through the {@see addWriteMark} and {@see addReadMark} methods.
  * Stores GUI components for easy reference.
  */
 public final class Gui {
