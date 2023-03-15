@@ -93,6 +93,10 @@ public final class Gui {
         return chartPanel;
     }
 
+    /**
+     * stores the data collected from a run of the storage write benchmark to be added to a chart in {@link MainFrame#refreshWriteMetrics() refreshWriteMetrics()}
+     * @param mark a DiskMark containing the results of a storage write benchmark run
+     */
     public static void addWriteMark(DiskMark mark) {
         wSeries.add(mark.getMarkNum(), mark.getBwMbSec());
         wAvgSeries.add(mark.getMarkNum(), mark.getCumAvg());
@@ -104,6 +108,10 @@ public final class Gui {
         System.out.println(mark.toString());
     }
 
+    /**
+     * stores the data collected from a run of the storage read benchmark to be added to a chart in {@link MainFrame#refreshReadMetrics()}  refreshReadMetrics()}
+     * @param mark a DiskMark containing the results of a storage read benchmark run
+     */
     public static void addReadMark(DiskMark mark) {
         rSeries.add(mark.getMarkNum(), mark.getBwMbSec());
         rAvgSeries.add(mark.getMarkNum(), mark.getCumAvg());
