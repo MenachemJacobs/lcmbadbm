@@ -9,6 +9,7 @@ import javax.swing.SwingWorker.StateValue;
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
 import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.Properties;
@@ -16,7 +17,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Primary class for global variables, main and common methods.
+ * The highest level module which initializes and manages the benchmarker application.
+ * Starts and cancels the application
+ * Manages saving, loading and clearing disk runs.
+ * <p>
+ * Host to global variables, main and common methods.
+ * @see #startBenchmark()  which instantiates a new Diskworker.
  */
 public class App {
 
@@ -243,6 +249,12 @@ public class App {
         worker.cancel(true);
     }
 
+    /**
+     * Validates, creates and executes a new DiskWorker.
+     * <p>
+     * Adds a propertyChangeListener to DiskWorker to listen
+     * for a change in progress or cancellation status.
+     */
     public static void startBenchmark() {
 
         //1. check that there isn't already a worker in progress
