@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 /**
  * Primary class for global variables, main and common methods.
+ * Dependent on DiskWorker class
  */
 public class App {
 
@@ -243,6 +244,11 @@ public class App {
         worker.cancel(true);
     }
 
+    /**
+     * Method is called when start is clicked.
+     * Instantiates DiskWorker variable
+     * @see DiskWorker class
+     */
     public static void startBenchmark() {
 
         //1. check that there isn't already a worker in progress

@@ -1,5 +1,6 @@
 /**
  * This package contains classes for the user interface.
+ * This package is dependent on the Swing Library for the user interface.
  * Each class creates specific parts of the UI, and
  * each contain various methods that allow for
  * adjusting those aspects.
