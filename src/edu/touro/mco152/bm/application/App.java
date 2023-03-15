@@ -1,4 +1,4 @@
-package edu.touro.mco152.bm;
+package edu.touro.mco152.bm.application;
 
 import edu.touro.mco152.bm.persist.DiskRun;
 import edu.touro.mco152.bm.ui.Gui;
@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Primary class for global variables, main and common methods.
+ * Primary class for global variables, startup & control methods.
  */
 public class App {
 
@@ -224,7 +224,9 @@ public class App {
             Gui.runPanel.addRun(run);
         });
     }
-
+    /**
+     *  clears and resets the runs
+     */
     public static void clearSavedRuns() {
         DiskRun.deleteAll();
 
@@ -336,6 +338,10 @@ public class App {
         return (long) blockSizeKb * numOfBlocks * numOfMarks;
     }
 
+    /**
+     * gets the current DisMark and gets proper totals/stats
+     * @param mark
+     */
     public static void updateMetrics(DiskMark mark) {
         if (mark.type == DiskMark.MarkType.WRITE) {
             if (wMax == -1 || wMax < mark.getBwMbSec()) {

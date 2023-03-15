@@ -1,10 +1,10 @@
-package edu.touro.mco152.bm;
+package edu.touro.mco152.bm.application;
 
 import edu.touro.mco152.bm.persist.DiskRun;
 import edu.touro.mco152.bm.persist.EM;
 import edu.touro.mco152.bm.ui.Gui;
-
 import jakarta.persistence.EntityManager;
+
 import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static edu.touro.mco152.bm.App.*;
-import static edu.touro.mco152.bm.DiskMark.MarkType.READ;
-import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
+import static edu.touro.mco152.bm.application.App.*;
+import static edu.touro.mco152.bm.application.DiskMark.MarkType.READ;
+import static edu.touro.mco152.bm.application.DiskMark.MarkType.WRITE;
 
 /**
  * Run the disk benchmarking as a Swing-compliant thread (only one of these threads can run at
@@ -29,7 +29,7 @@ import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
  * while the DiskMark class described each iteration's result, which is displayed by the UI as the benchmark run
  * progresses.
  * <p>
- * This class only knows how to do 'read' or 'write' disk benchmarks. It is instantiated by the
+ * This class only knows how to do 'read' or 'write' (or both 'read' and 'write') disk benchmarks. It is instantiated by the
  * startBenchmark() method.
  * <p>
  * To be Swing compliant this class extends SwingWorker and declares that its final return (when
@@ -42,16 +42,16 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
     // Record any success or failure status returned from SwingWorker (might be us or super)
     Boolean lastStatus = null;  // so far unknown
 
+    /**
+     * Method called when End-user clicked 'Start' on the benchmark UI,
+     * which triggered the start-benchmark event associated with the App::startBenchmark()
+     * method.  2: startBenchmark() then instantiated a DiskWorker, and called
+     * its (super class's) execute() method, causing Swing to eventually
+     * call this doInBackground() method.
+     */
     @Override
     protected Boolean doInBackground() throws Exception {
 
-        /*
-          We 'got here' because: 1: End-user clicked 'Start' on the benchmark UI,
-          which triggered the start-benchmark event associated with the App::startBenchmark()
-          method.  2: startBenchmark() then instantiated a DiskWorker, and called
-          its (super class's) execute() method, causing Swing to eventually
-          call this doInBackground() method.
-         */
         Logger.getLogger(App.class.getName()).log(Level.INFO, "*** New worker thread started ***");
         msg("Running readTest " + App.readTest + "   writeTest " + App.writeTest);
         msg("num files: " + App.numOfMarks + ", num blks: " + App.numOfBlocks
@@ -304,10 +304,11 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
         });
     }
 
-
+    /**
+     * Obtain final status, might be from doInBackground return value, or SwingWorker error
+     */
     @Override
     protected void done() {
-        // Obtain final status, might from doInBackground ret value, or SwingWorker error
         try {
             lastStatus = super.get();   // record for future access
         } catch (Exception e) {
