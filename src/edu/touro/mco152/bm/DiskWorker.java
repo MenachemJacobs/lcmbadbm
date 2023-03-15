@@ -26,14 +26,13 @@ import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
  * This class is limited to 'read' or 'write' benchmarks. <br>
  * It is also limited to benchmarking disks only.
  * <p>
- * @see App#startBenchmark() The App module which instantiates this class.
- * <p>
- * Dependencies:
- * This class extends SwingWorker, and is therefore dependent on it.
- * DiskWorker serializes every group of benchmarks. It is instantiated by this class.
- * Several DiskMarks are used to store each benchmark result. It is instantiated by this class.
+ * Dependencies: <br>
+ * This class extends SwingWorker, and is therefore dependent on it. <br>
+ * DiskWorker serializes every group of benchmarks. It is instantiated by this class. <br>
+ * Several DiskMarks are used to store each benchmark result. It is instantiated by this class. <br>
  * Accesses the App and Gui classes.
  * <p>
+ * @see App#startBenchmark() The App module which instantiates this class.
  * @see SwingWorker The SwingWorker UI class
  * @see DiskRun; The DiskRun class
  * @see DiskMark; The DiskMark class
