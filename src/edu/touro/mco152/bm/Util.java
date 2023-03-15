@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
  * Supporting Linux OS, Mac OS X, and Windows OS; this class
  * is quite versatile and also handles the case if OS happens to be unsupported.
  *
+ * Approved by Benji Mayer. Would add that this class will not be refactored for time being to transform into
+ * GoodBM
  */
 public class Util {
 
@@ -23,6 +25,7 @@ public class Util {
 
     /**
      * Deletes the Directory and all files within
+     * Be careful before altering
      *
      * @param path Directory to delete
      * @return True if path deleted successfully
@@ -45,7 +48,8 @@ public class Util {
      * Returns a pseudo-random number between min and max, inclusive.
      * The difference between min and max can be at most
      * <code>Integer.MAX_VALUE - 1</code>.
-     *
+     * Will be used
+     * for different benchmarking things*
      * @param min Minimum value
      * @param max Maximum value.  Must be greater than min.
      * @return Integer between min and max, inclusive.

@@ -1,3 +1,6 @@
+/**
+ * This package contains classes necessary for the function of the program
+ */
 package edu.touro.mco152.bm;
 
 import edu.touro.mco152.bm.persist.DiskRun;
@@ -20,6 +23,7 @@ import java.util.logging.Logger;
  * Primary holder of global variables.
  * Responsible for changing properties configurations.
  * Initiates the custom Swing benchmark handling class. {@link DiskWorker}
+ * Do not alter without cause
  */
 public class App {
 
@@ -55,6 +59,7 @@ public class App {
 
     /**
      * @param args the command line arguments
+     *             Sets up the app
      */
     public static void main(String[] args) {
 
@@ -84,6 +89,7 @@ public class App {
 
     /**
      * Get the version from the build properties. Defaults to 0.0 if not found.
+     * Helps maintain awareness of the version
      *
      * @return a String set to the proper version number
      */
@@ -100,7 +106,7 @@ public class App {
     }
 
     /**
-     * Initialize the GUI Application.
+     * Initialize the GUI application.
      */
     public static void init() {
         Gui.mainFrame = new MainFrame();

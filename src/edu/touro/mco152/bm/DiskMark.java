@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 /**
  * Tracks and records progress as a disk read or write is being executed.
  * Contains data fields related to the current benchmark with appropriate setter and getter methods.
+ * Helps keep track of status.
  */
 public class DiskMark {
 

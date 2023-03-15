@@ -1,3 +1,7 @@
+/**
+ * This package is made by the Touro College Computer Science Faculty. It is very important to the reader that
+ * he carefully analyze the package before proceeding to analyze the code.
+ */
 package edu.touro.mco152.bm;
 
 import edu.touro.mco152.bm.persist.DiskRun;
@@ -20,6 +24,7 @@ import static edu.touro.mco152.bm.DiskMark.MarkType.READ;
 import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
 
 /**
+ * Read through this documentation carefully
  * Run the disk benchmarking exclusively as a Swing-compliant thread (only one of these threads can run at
  * once.) Must cooperate with Swing to provide and make use of interim and final progress and
  * information, which is also recorded as needed to the persistence store, and log.
@@ -289,7 +294,8 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
 
     /**
      * Process a list of 'chunks' that have been processed, ie that our thread has previously
-     * published to Swing. For my info, watch Professor Cohen's video -
+     * published to Swing. For more info, watch Professor Cohen's video -
+     *
      * Module_6_RefactorBadBM Swing_DiskWorker_Tutorial.mp4
      * @param markList a list of DiskMark objects reflecting some completed benchmarks
      */
