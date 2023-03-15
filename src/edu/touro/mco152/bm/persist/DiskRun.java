@@ -10,8 +10,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Stores information about the results of a single disk
- * write/read test
+ * Provides an object that holds the information for a run of a storage benchmark, entities for the jakarta persistence database, a named query for it, and methods to set, get, change and manage data within it
+ * Provides information about the results of a single disk write/read test
+ * <p>
+ * @see java.io.Serializable
  */
 @Entity
 @Table(name = "DiskRun")
