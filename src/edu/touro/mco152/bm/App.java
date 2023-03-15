@@ -16,7 +16,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Primary class for global variables, main and common methods.
+ * Provides global variables that relate to the settings and state of the benchmark and methods that configure, start, and change the benchmark, gui and related variables.
+ * <p>
+ * Makes liberal use of static methods and variables set within {@link edu.touro.mco152.bm.ui.Gui Gui}
+ * Holds many of the constants to be used throughout the entire program
+ * Provides a central exception point for the entire program
+ * <p>
+ * @see edu.touro.mco152.bm.persist.DiskRun for storage benchmark result storage
+ * @see edu.touro.mco152.bm.DiskWorker for storage benchmark
+ * @see edu.touro.mco152.bm.ui for gui elements
  */
 public class App {
 
@@ -80,9 +88,9 @@ public class App {
     }
 
     /**
-     * Get the version from the build properties. Defaults to 0.0 if not found.
+     * Gets the version from the build properties. Uses 0.0 to indicate if not found.
      *
-     * @return
+     * @return the version of the benchmark
      */
     public static String getVersion() {
         Properties bp = new Properties();
