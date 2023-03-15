@@ -3,6 +3,7 @@
  * data. This data can be used to gather statistical information
  * about the machine being tested.
  * <p>
- * This class also deals with databases.
+ * The class 'EM' in this package is to help track and manage changes done by the tests.
+ * The class 'DiskRun' stores and gets information from the benchmarks, hence the many getter and setter methods.
  */
 package edu.touro.mco152.bm.persist;

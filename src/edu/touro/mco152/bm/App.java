@@ -16,9 +16,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * @author jamesmarkchan
  * Primary class for global variables, main and common methods.
  * <p>
- * This class has also the main method in it, which runs the program
+ * This class is important becasue in it is the main method, which is called to run the program
  */
 public class App {
 
@@ -228,7 +229,8 @@ public class App {
     }
 
     /**
-     * This method clears the saved runs
+     * When the 'clearRunsItemActionPerformed()' method is called, this method
+     * prints out a message and clears the saved runs
      */
     public static void clearSavedRuns() {
         DiskRun.deleteAll();
