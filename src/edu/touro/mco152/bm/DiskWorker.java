@@ -321,6 +321,10 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
         Gui.mainFrame.adjustSensitivity();
     }
 
+    /**
+     * Returns true or false depending on the latest status
+     * @return true if the latest status is true
+     */
     public Boolean getLastStatus() {
         return lastStatus;
     }
