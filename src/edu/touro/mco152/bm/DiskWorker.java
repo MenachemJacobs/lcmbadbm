@@ -35,6 +35,8 @@ import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
  * To be Swing compliant this class extends SwingWorker and declares that its final return (when
  * doInBackground() is finished) is of type Boolean, and declares that intermediate results are communicated to
  * Swing using an instance of the DiskMark class.
+ * <p>
+ * This class will be instantiated in the App.java class
  */
 
 public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
@@ -42,8 +44,12 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
     // Record any success or failure status returned from SwingWorker (might be us or super)
     Boolean lastStatus = null;  // so far unknown
 
+        /**
+         * This method does the reading and the writing for our benchmarks
+         */
     @Override
     protected Boolean doInBackground() throws Exception {
+
 
         /*
           We 'got here' because: 1: End-user clicked 'Start' on the benchmark UI,

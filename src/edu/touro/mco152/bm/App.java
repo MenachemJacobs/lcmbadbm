@@ -17,6 +17,8 @@ import java.util.logging.Logger;
 
 /**
  * Primary class for global variables, main and common methods.
+ * <p>
+ * This class has also the main method in it, which runs the program
  */
 public class App {
 
@@ -225,6 +227,9 @@ public class App {
         });
     }
 
+    /**
+     * This method clears the saved runs
+     */
     public static void clearSavedRuns() {
         DiskRun.deleteAll();
 
