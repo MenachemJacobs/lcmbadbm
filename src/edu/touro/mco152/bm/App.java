@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * Manages saving, loading and clearing disk runs.
  * <p>
  * Host to global variables, main and common methods.
- * @see #startBenchmark()  which instantiates a new Diskworker.
+ * @see #startBenchmark() The startBenchmark method which instantiates a new Diskworker.
  */
 public class App {
 
@@ -253,7 +253,9 @@ public class App {
      * Validates, creates and executes a new DiskWorker.
      * <p>
      * Adds a propertyChangeListener to DiskWorker to listen
-     * for a change in progress or cancellation status.
+     * for a change in progress or in cancellation status.
+     * <p>
+     * @see DiskWorker The DiskWorker class.
      */
     public static void startBenchmark() {
 

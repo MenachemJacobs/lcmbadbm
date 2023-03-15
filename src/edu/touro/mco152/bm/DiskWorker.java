@@ -22,17 +22,21 @@ import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
 /**
  * Runs benchmarking on the computer's disk using a Swing UI.
  * <p>
- * Dependencies:
- * @see SwingWorker; This class extends SwingWorker, and is therefore dependent on it.
- * @see DiskRun; It instantiates DiskRun which serializes every group of benchmarks.
- * @see DiskMark; It instantiates several DiskMarks which store each benchmark result.
- * Accesses the App and Gui classes.
- * <p>
  * Limitations:
- * This class is limited to 'read' or 'write' benchmarks.
+ * This class is limited to 'read' or 'write' benchmarks. <br>
  * It is also limited to benchmarking disks only.
  * <p>
- * @see App#startBenchmark() which instantiates this class.
+ * @see App#startBenchmark() The App module which instantiates this class.
+ * <p>
+ * Dependencies:
+ * This class extends SwingWorker, and is therefore dependent on it.
+ * DiskWorker serializes every group of benchmarks. It is instantiated by this class.
+ * Several DiskMarks are used to store each benchmark result. It is instantiated by this class.
+ * Accesses the App and Gui classes.
+ * <p>
+ * @see SwingWorker The SwingWorker UI class
+ * @see DiskRun; The DiskRun class
+ * @see DiskMark; The DiskMark class
  */
 
 public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
@@ -44,7 +48,7 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
     /**
      * Runs all read/write benchmarking tasks.
      * <p>
-     * @see DiskWorker#execute() which calls this method automatically.
+     * @see DiskWorker#execute() The execute method which calls this method automatically.
      * @return true if benchmark runs successfully.
      * <p>
      * @throws IOException if seek or read or write fails.
