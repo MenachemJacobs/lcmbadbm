@@ -16,7 +16,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Primary class for global variables, main and common methods.
+ * Primary class for global variables.
+ * Main methods for starting and running the BM.
+ * Saves and loads the BM.
  */
 public class App {
 
