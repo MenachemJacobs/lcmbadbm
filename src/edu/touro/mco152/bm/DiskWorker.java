@@ -25,6 +25,10 @@ import static edu.touro.mco152.bm.DiskMark.MarkType.WRITE;
 
 /**
  * Read through this documentation carefully
+ * NOTE: ALL OF THIS CODE IS RIPE FOR REFACTORING
+ *
+ * in order to go into alignment with the new product description, it will be important
+ * to make new interfaces and functionalities to implement the class's responsibilities.
  * Run the disk benchmarking exclusively as a Swing-compliant thread (only one of these threads can run at
  * once.) Must cooperate with Swing to provide and make use of interim and final progress and
  * information, which is also recorded as needed to the persistence store, and log.
