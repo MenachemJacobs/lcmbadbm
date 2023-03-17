@@ -10,8 +10,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Stores information about the results of a single disk
- * write/read test
+ * The DiskRun class is designed to allow the hard drive to run disk sectors.
+ * This class is used by the DiskManager class, so get an idea of any open
+ * sectors on the given drive.
  */
 @Entity
 @Table(name = "DiskRun")

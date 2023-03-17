@@ -105,6 +105,12 @@ public class RunPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * This method is designed to allow a new row to be added the runTable
+     * with details specified by the DiskRun object passed in.
+     * @param run this will add a DiskRun objects which adds to the table
+     */
+
     public void addRun(DiskRun run) {
         DefaultTableModel model = (DefaultTableModel) this.runTable.getModel();
         model.addRow(
