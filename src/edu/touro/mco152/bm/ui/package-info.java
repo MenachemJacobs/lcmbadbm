@@ -7,5 +7,6 @@
  * This package is Swing dependant, meaning that it runs on Swing and will not work without the Swing Library.
  * The {@code DiskWorker} class is dependent on the {@code GUI} class in this package
  * The {@code GUI} class is generated in the {@code App} class, and the {@code App} class too, is coupled with {@code GUI} class.
+ * The main operations of the program is run through classes in this package updating the UI when methods complete execution.
  */
 package edu.touro.mco152.bm.ui;

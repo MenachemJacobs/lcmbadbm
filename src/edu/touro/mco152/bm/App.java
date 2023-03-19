@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  * Contains the main runnable method of the program.
  * Primary holder of global variables.
  * Responsible for changing properties configurations.
+ * Configuration is loaded and saved through this class using the "jdm.properties" file
  * Initiates the custom Swing benchmark handling class. {@link DiskWorker}
  */
 public class App {
@@ -248,6 +249,7 @@ public class App {
 
     /**
      * Handles benchmark and GUI configuration/management when a benchmark is started.
+     * This method also starts the SwingWorker which will initiate a read/write operation.
      */
     public static void startBenchmark() {
 

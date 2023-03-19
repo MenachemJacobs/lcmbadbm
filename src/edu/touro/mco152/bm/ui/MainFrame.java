@@ -19,6 +19,9 @@ import static java.awt.Font.PLAIN;
 
 /**
  * Creates the MainFrame with methods that enable easy control
+ * This class sets up all the variables and actions that are tied with
+ * Swing. Every time an action occurs on the GUI it is tied to update a swing
+ * component that is rendered to the GUI, and run a specific action.
  */
 @SuppressWarnings("rawtypes")
 public final class MainFrame extends javax.swing.JFrame {

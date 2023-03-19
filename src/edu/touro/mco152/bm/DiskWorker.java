@@ -42,6 +42,13 @@ public class DiskWorker extends SwingWorker<Boolean, DiskMark> {
     // Record any success or failure status returned from SwingWorker (might be us or super)
     Boolean lastStatus = null;  // so far unknown
 
+    /**
+     * The following method runs In the SwingWorker thread.
+     * It is responsible to start a read/write operation in the background hence the
+     * method name. it also updates the UI as necessary.
+     * @return boolean
+     * @throws Exception
+     */
     @Override
     protected Boolean doInBackground() throws Exception {
 
